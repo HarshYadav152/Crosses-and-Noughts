@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2&family=Roboto&display=swap');
+
+body{
+    background-color: bisque;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    background-color: rgb(39, 22, 22);
+    color: white;
+    height: 75px;
+    font-size:20px;
+    display: flex;
+    align-items: center;  
+    padding: 0 12px;      
+}
+
+nav ul{
+    list-style-type:none;
+}
+
+.gameContainer{
+    /* background-color: bisque; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 30px;
+    /* height: 100vh; */
+    
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(3,10vw);
+    grid-template-rows: repeat(3,10vw);
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    color: rgb(39, 22, 22);
+}
+
+.box{
+    display: flex;
+    border: 2px solid black;
+    font-size: 8vw;
+    align-items: center;
+    justify-content: center;
+}
+
+.box:hover{
+    background-color:beige;
+    color: rgb(12, 1, 1);
+    cursor: pointer;
+    transition: all 0.6s ease;
+}
+
+.info{
+    font-size: 23px;
+}
+
+.gameinfo{
+    padding:0 34px ;
+    font-family: 'Baloo Bhaina 2', cursive;
+}
+.gameinfo h1{
+    font-size:2rem;
+}
+
+.imgbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.imgbox img{
+    width: 0px;
+    transition: width 1s ease-in-out;
+}
+
+#reset{
+    margin: 0 23px;  
+    padding: 6px 12px;
+    cursor: pointer; 
+    background: rgb(235, 174, 100);     
+    border-radius: 12px;
+}
+
+.line{
+    background-color: rgb(249, 204, 121);
+    height: 5px ;
+    width: 0;
+    border-radius: 5px;
+    position: absolute;
+    transition: width 1s ease-in-out;   
+}
+@media screen and (max-width:800px) {
+    .container{
+        grid-template-columns: repeat(3, 10vw);
+        grid-template-rows: repeat(3, 10vw);
+    }
+    .gameContainer{
+        flex-wrap: wrap;
+    }
+    .gameinfo{
+        margin-top: 23px;
+    }
+    .gameinfo h1{
+        font-size: 1.5rem;
+    }
+    #info-reset{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
