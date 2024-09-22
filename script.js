@@ -7,17 +7,15 @@ ting.preload = 'auto';
 let turn = 'X';
 let gameOver = false;
 
-// const onClick = ()=>{
-//     document.getElementsByClassName("box").querySelector(".boxtext").innerText="";
-// }
 // to change the win
 const changeTurn = () => {
     return turn === 'X' ? '0' : 'X';
 }
 const player1 = prompt("Player 1 enter your name : ");
-const choice_player1 = confirm(`${player1} play with X`)
+const choice_player1 = confirm(`${player1} play with X`);
 const player2 = prompt("Player 2 enter your name : ");
-const choice_player2 = confirm(`${player2} play with 0`)
+const choice_player2 = confirm(`${player2} play with 0`);
+
 // to check the winner
 const checkWin = () => {
     let boxtexts = document.getElementsByClassName('boxtext');
@@ -48,10 +46,8 @@ const checkWin = () => {
             }else{
                 alert(`${player2} won the match`);
             }
-            return true;
         }
     })
-    return false;
 }
 
 // Game Logic
@@ -65,7 +61,6 @@ Array.from(boxes).forEach(element => {
         if (boxtext.innerText === '') {
             boxtext.innerText = turn;
             turn = changeTurn();
-            // checkWin();
             checkWin();
             if (!gameOver) {
             document.getElementsByClassName('info')[0].innerText = `Turn for ${turn}`;
@@ -75,7 +70,6 @@ Array.from(boxes).forEach(element => {
 })
 
 // for reset button
-
 reset.addEventListener('click', () => {
     let boxtexts = document.querySelectorAll(".boxtext");
     Array.from(boxtexts).forEach(element => {
